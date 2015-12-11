@@ -1,0 +1,9 @@
+{
+  "firebase": "quilttt",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
