@@ -54,13 +54,12 @@ form {
    height: 95px;
    position: absolute;
    top: 35px;
-   left: 35px;
 }
 
 .diamond {
    mask: url(images/colors/diamond-mask.png);
    -webkit-mask:url(images/colors/diamond-mask.png);
-   transform: rotate(30deg);
+   /*transform: rotate(30deg);*/
 }
 
 .glow{
