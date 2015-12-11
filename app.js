@@ -1,9 +1,10 @@
+// fancy as fuck fade in
 $(document).ready(function(){
    $("#logo").animate({"opacity":1.0},1500,function(){console.log()});
    $("#quilt").animate({"opacity":1.0},2000,function(){console.log()});
 });
 
-var theGlow = $(".glow");
+// add pieces
 $("#clickFerPieces").click(function(){
    var colorChoice = $("input[name=color]:checked").val();
    var qty = $("#qty").val();
@@ -13,6 +14,8 @@ $("#clickFerPieces").click(function(){
       };
 });
 
+// make shit draggable
+var theGlow = $(".glow");
 $(document).on('click', theGlow, function(){
    $(".piece").draggable({
       start: function(event,ui){
@@ -24,6 +27,7 @@ $(document).on('click', theGlow, function(){
    });
 });
 
+// keyboard business
 $(document).on('keypress', theGlow, function(e){
    switch (e.keyCode) {
       case 82:; rotate60(); break;
@@ -36,7 +40,7 @@ $(document).on('keypress', theGlow, function(e){
    };
 });
 
-
+// rotation funcs
 var degreesCount = 0;
 var rotate45 = function() {
    if (degreesCount >= 360) {
@@ -66,9 +70,9 @@ var rotate90 = function() {
    }
 };
 
+// copy func
 var cccopy = function(){
    var copyDuhPiece = $(".glow")[0].outerHTML;
-   var imageBuziness = copyDuhPiece.replace(' ui-draggable ui-draggable-handle ui-draggable-dragging glow','');
-   copyDuhPiece = '"'+ imageBuziness + '"';
+   var copyDuhPiece = copyDuhPiece.replace(' ui-draggable ui-draggable-handle ui-draggable-dragging glow','');
    $("#quilt").append(copyDuhPiece);
 };

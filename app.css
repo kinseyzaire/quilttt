@@ -7,39 +7,11 @@ header {
    float: right;
    margin-right: 45px;
 }
+
 form {
    font-family: 'Quicksand', sans-serif;
    margin-top: -25px;
    font-size: .25em;
-}
-
-/*ol {
-   list-style: none;
-   display: inline-block;
-   padding-right: 5px;
-}*/
-
-/*ol > ol {
-   font-weight: 300;
-}*/
-
-#logo {
-   font-family: 'Poiret One', sans-serif;
-   text-align: right;
-   letter-spacing: 1.5px;
-   font-size: 2em;
-   opacity: 0.0;
-}
-
-#quilt {
-   opacity: 0.0;
-}
-
-#qty {
-   width: 45px;
-}
-
-form {
    width: 140px;
    float: right;
    margin-right: 12px;
@@ -59,9 +31,24 @@ form {
 .diamond {
    mask: url(images/colors/diamond-mask.png);
    -webkit-mask:url(images/colors/diamond-mask.png);
-   /*transform: rotate(30deg);*/
 }
 
 .glow{
    opacity: 0.5;
+}
+
+#logo {
+   font-family: 'Poiret One', sans-serif;
+   text-align: right;
+   letter-spacing: 1.5px;
+   font-size: 2em;
+   opacity: 0.0;
+}
+
+#quilt {
+   opacity: 0.0;
+}
+
+#qty {
+   width: 45px;
 }
