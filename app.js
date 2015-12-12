@@ -10,7 +10,7 @@ $("#clickFerPieces").click(function(){
    var qty = $("#qty").val();
    var layEmOut = 35;
    for (var i = 0; i < qty; i++) {
-      $("#quilt").append("<img class='piece diamond' src='images/colors/"+ colorChoice +"/"+ i +".png' style='z-index: "+ i +"; left: "+(layEmOut+(i*15))+"px;'>");
+      $("#quilt").append("<img class='piece diamond' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(layEmOut+(i*15))+"px;'>");
       };
 });
 
@@ -27,7 +27,7 @@ $(document).on('click', theGlow, function(){
    });
 });
 
-// keyboard business
+// keyboard bizNE$$$$$ess
 $(document).on('keypress', theGlow, function(e){
    switch (e.keyCode) {
       case 82:; rotate60(); break;
