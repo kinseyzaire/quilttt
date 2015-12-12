@@ -28,7 +28,7 @@ $(document).on('click', theGlow, function(){
 });
 
 // keyboard bizNE$$$$$ess
-$(document).on('keypress', theGlow, function(e){
+$(document).on('keydown', theGlow, function(e){
    switch (e.keyCode) {
       case 82:; rotate60(); break;
       case 114: rotate60(); break;
@@ -39,6 +39,19 @@ $(document).on('keypress', theGlow, function(e){
       default: return true;
    };
 });
+
+// $("#quilt") = theQuilt
+// $(document).on('keydown', theQuilt, function(e){
+//    switch (e.keyCode) {
+//       // console.log(e);
+//       console.log(keyCode);
+//       // case 82:; rotate60(); break;
+//       // default: return true;
+// });
+
+
+
+
 
 // rotation funcs
 var degreesCount = 0;
