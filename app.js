@@ -30,28 +30,23 @@ $(document).on('click', theGlow, function(){
 // keyboard bizNE$$$$$ess
 $(document).on('keydown', theGlow, function(e){
    switch (e.keyCode) {
-      case 82:; rotate60(); break;
-      case 114: rotate60(); break;
-      case 67: cccopy(); break;
-      case 99: cccopy(); break;
-      case 68: $(".glow").hide(); break;
-      case 100: $(".glow").hide(); break;
+      case 82: rotate60(); break; //r for rotate
+      case 114: rotate60(); break; //r for rotate
+      case 67: cccopy(); break; //c for copy
+      case 99: cccopy(); break; //c for copy
+      case 68: $(".glow").hide(); break; // d for delete
+      case 100: $(".glow").hide(); break; // d for delete
       default: return true;
    };
 });
 
-// $("#quilt") = theQuilt
-// $(document).on('keydown', theQuilt, function(e){
-//    switch (e.keyCode) {
-//       // console.log(e);
-//       console.log(keyCode);
-//       // case 82:; rotate60(); break;
-//       // default: return true;
-// });
-
-
-
-
+// clear all pieces with 0 key
+var theQuilt = $("#quilt")
+$(document).on('keydown', theQuilt, function(e){
+   if (e.keyCode == 48){
+      theQuilt.html("<div></div>");
+   }
+});
 
 // rotation funcs
 var degreesCount = 0;
