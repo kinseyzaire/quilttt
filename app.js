@@ -4,29 +4,32 @@ $(document).ready(function(){
    $("#quilt").animate({"opacity":1.0},2000,function(){console.log()});
 });
 
-// add pieces from index to index
-$("#clickFerPieces").click(function(){
+// add quilt pieces
+var addPieces = function(){
    var colorChoice = $("input[name=color]:checked").val();
    var qty = $("#qty").val();
    var layEmOut = 35;
    for (var i = 0; i < qty; i++) {
       $("#quilt").append("<img class='piece diamond' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(layEmOut+(i*15))+"px;'>");
-      };
+   };
+};
+
+// add pieces from index to index
+$("#clickFerPieces").click(function(){
+   addPieces();
 });
 
 // add pieces from popout to index
 $("#clickNSend").click(function(){
    var colorChoice = $("input[name=color]:checked").val();
    var qty = $("#qty").val();
-   var layEmOut = 35;
-   $.ajax({
-      url: "index.html",
-      context: document.body
-      }).done(function() {
-         for (var i = 0; i < qty; i++) {
-            $(this).append("<img class='piece diamond' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(layEmOut+(i*15))+"px;'>");
-         };
-   });
+   var formInfo = {
+      "colors": colorChoice,
+      "quantity": qty
+   };
+   formInfo = JSON.stringify(formInfo);
+   console.log(formInfo);
+   localStorage.setItem("formInfo",formInfo);
 
 
 });
