@@ -1,3 +1,7 @@
+/**{
+   border: 1px solid red;
+}*/
+
 body {
    background-color: "#f8f1ef";
    color: "#302f36";
@@ -10,15 +14,28 @@ header {
 
 form {
    font-family: 'Quicksand', sans-serif;
-   margin-top: -25px;
+   margin-top: -35px;
    font-size: .25em;
-   width: 140px;
+   width: 200px;
    float: right;
    margin-right: 12px;
 }
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+.form-whole {
+   float: right;
+   width: 100%;
+   margin-top: 20px;
+}
+
 .form-half {
    float: right;
    width: 50%;
+   margin-top: 20px;
 }
 
 .piece {
@@ -51,4 +68,8 @@ form {
 
 #qty {
    width: 45px;
+}
+
+#clickFerPopout {
+   margin-top: 30px;
 }

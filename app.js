@@ -4,8 +4,18 @@ $(document).ready(function(){
    $("#quilt").animate({"opacity":1.0},2000,function(){console.log()});
 });
 
-// add pieces
+// add pieces from index to index
 $("#clickFerPieces").click(function(){
+   var colorChoice = $("input[name=color]:checked").val();
+   var qty = $("#qty").val();
+   var layEmOut = 35;
+   for (var i = 0; i < qty; i++) {
+      $("#quilt").append("<img class='piece diamond' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(layEmOut+(i*15))+"px;'>");
+      };
+});
+
+// add pieces from popout to index
+$("#clickNSend").click(function(){
    var colorChoice = $("input[name=color]:checked").val();
    var qty = $("#qty").val();
    var layEmOut = 35;
@@ -31,19 +41,16 @@ $(document).on('click', theGlow, function(){
 $(document).on('keydown', theGlow, function(e){
    switch (e.keyCode) {
       case 82: rotate60(); break; //r for rotate
-      case 114: rotate60(); break; //r for rotate
       case 67: cccopy(); break; //c for copy
-      case 99: cccopy(); break; //c for copy
       case 68: $(".glow").hide(); break; // d for delete
-      case 100: $(".glow").hide(); break; // d for delete
       default: return true;
    };
 });
 
-// clear all pieces with 0 key
+// clear all pieces with q key
 var theQuilt = $("#quilt")
 $(document).on('keydown', theQuilt, function(e){
-   if (e.keyCode == 48){
+   if (e.keyCode == 81){
       theQuilt.html("<div></div>");
    }
 });
@@ -84,3 +91,12 @@ var cccopy = function(){
    var copyDuhPiece = copyDuhPiece.replace(' ui-draggable ui-draggable-handle ui-draggable-dragging glow','');
    $("#quilt").append(copyDuhPiece);
 };
+
+// quilt pieces form pop out
+// click popout button
+// hide logo
+// link to new (tiny?) page
+
+$("#clickFerPopout").click(function(){
+   $("#logo").hide();
+});
