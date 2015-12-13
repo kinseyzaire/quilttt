@@ -46,6 +46,8 @@ a {
 .diamond {
    mask: url(images/colors/diamond-mask.png);
    -webkit-mask:url(images/colors/diamond-mask.png);
+   shape-outside: url(images/colors/diamond-mask.png);
+   -webkit-shape-outside:url(images/colors/diamond-mask.png);
    width: 55px;
    height: 95px;
 }
@@ -53,12 +55,16 @@ a {
 .window1 {
    mask: url(images/colors/window-mask-1.png);
    -webkit-mask:url(images/colors/window-mask-1.png);
+   shape-outside: url(images/colors/window-mask-1.png);
+   -webkit-shape-outside:url(images/colors/window-mask-1.png);
    width: 154px;
 }
 
 .window2 {
    mask: url(images/colors/window-mask-2.png);
    -webkit-mask:url(images/colors/window-mask-2.png);
+   shape-outside: url(images/colors/window-mask-2.png);
+   -webkit-shape-outside:url(images/colors/window-mask-2.png);
    width: 154px;
 }
 

@@ -7,10 +7,10 @@ $(document).ready(function(){
 // add quilt pieces
 var addPieces = function(){
    var colorChoice = $("input[name=color]:checked").val();
+   var shapeChoice = $("input[name=shape]:checked").val();
    var qty = $("#qty").val();
    for (var i = 0; i < qty; i++) {
-      $("#quilt").append("<img class='piece window1' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(i*15)+"px;'>");
-      $("#quilt").append("<img class='piece window2' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ (i+1) +"; top: 165px; left: "+(i*15)+"px;'>");
+      $("#quilt").append("<img class='piece "+ shapeChoice +"' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(i*15)+"px;'>");
    };
 };
 
@@ -55,7 +55,7 @@ $(document).on('click', theGlow, function(){
 // keyboard bizNE$$$$$ess
 $(document).on('keydown', theGlow, function(e){
    switch (e.keyCode) {
-      case 82: rotate60(); break; //r for rotate
+      case 82: rotate90(); break; //r for rotate
       case 67: cccopy(); break; //c for copy
       case 68: $(".glow").hide(); break; // d for delete
       default: return true;
