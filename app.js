@@ -18,25 +18,30 @@ $("#clickFerPieces").click(function(){
    addPieces();
 });
 
-// // add pieces from popout to index
-// $("#clickNSend").click(function(){
-//    var colorChoice = $("input[name=color]:checked").val();
-//    var qty = $("#qty").val();
-//    var formInfo = {
-//       "colors": colorChoice,
-//       "quantity": qty
-//    };
-//    formInfo = JSON.stringify(formInfo);
-//    console.log(formInfo);
-//    localStorage.setItem("formInfo",formInfo);
-// });
-//
-// //listen for something added to localStorage
-// $(function (){
-//   $(window).on('storage', function (e) {
-//     alert('storage changed');
-//   });
-// });
+// add pieces from popout to localStorage
+$("#clickNSend").click(function(){
+   var colorChoice = $("input[name=color]:checked").val();
+   var shapeChoice = $("input[name=shape]:checked").val();
+   var qty = $("#qty").val();
+   var formInfo = {
+      "colors": colorChoice,
+      "shape": shapeChoice,
+      "quantity": qty
+   };
+   formInfo = JSON.stringify(formInfo);
+   console.log(formInfo);
+   localStorage.setItem("formInfo",formInfo);
+   console.log(localStorage);
+});
+
+//listen for something added to localStorage
+$(function (){
+  $(window.top).on('storage', function (e) {
+    alert('storage changed');
+  });
+});
+
+//do this thing when localStorage changes
 
 // make shit draggable
 var theGlow = $(".glow");

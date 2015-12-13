@@ -10,10 +10,14 @@
    <body>
       <header id="logo">
          <h1>QUILTTT</h1>
-         <form action="index.html#quilt" method="GET">
+         <form>
             <div class="form-half">
                <h3>quantity</h3>
                <input type="number" id="qty" name="qty" value="6" max="60"><br>
+               <h3>shape</h3>
+               <input type="radio" name="shape" id="diamondzzz" value="diamond"><label for="diamondzzz"><img src="images/colors/diamond-icon.png" width="15px"></label>
+               <input type="radio" name="shape" id="windowww1" value="window1"><label for="windowww1"><img src="images/colors/window-1-icon.png" width="27px"></label>
+               <input type="radio" name="shape" id="windowww2" value="window2"><label for="windowww2"><img src="images/colors/window-2-icon.png" width="12px"></label>
                <h3 id="clickNSend">+ add +</h3>
             </div>
             <div class="form-half">
@@ -33,7 +37,10 @@
                <p>
                   While holding a piece (the shape will go slightly transparent) use your keyboard to
                   <strong>[r] ROTATE</strong>, <strong>[d] DELETE</strong>, and <strong>[c] COPY</strong> that quilt piece,
-                  or <strong>[q]</strong> to <strong>CLEAR</strong> all of the pieces and start again.
+                  or <strong>[q]</strong> to <strong>CLEAR</strong> all of the pieces and start again
+               </p>
+               <p>
+                  You can zoom in and out using <strong>COMMAND +</strong> and <strong>COMMAND -</strong>
                </p>
             </div>
          </form>
