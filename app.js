@@ -18,28 +18,34 @@ $("#clickFerPieces").click(function(){
    addPieces();
 });
 
-// add pieces from popout to localStorage
-$("#clickNSend").click(function(){
-   var colorChoice = $("input[name=color]:checked").val();
-   var shapeChoice = $("input[name=shape]:checked").val();
-   var qty = $("#qty").val();
-   var formInfo = {
-      "colors": colorChoice,
-      "shape": shapeChoice,
-      "quantity": qty
-   };
-   formInfo = JSON.stringify(formInfo);
-   console.log(formInfo);
-   localStorage.setItem("formInfo",formInfo);
-   console.log(localStorage);
+// DREADED POPOUT
+
+$("#clickFerPopout").click(function(){
+   $("#logo").hide();
 });
 
-//listen for something added to localStorage
-$(function (){
-  $(window.top).on('storage', function (e) {
-    alert('storage changed');
-  });
-});
+// // add pieces from popout to localStorage
+// $("#clickNSend").click(function(){
+//    var colorChoice = $("input[name=color]:checked").val();
+//    var shapeChoice = $("input[name=shape]:checked").val();
+//    var qty = $("#qty").val();
+//    var formInfo = {
+//       "colors": colorChoice,
+//       "shape": shapeChoice,
+//       "quantity": qty
+//    };
+//    formInfo = JSON.stringify(formInfo);
+//    console.log(formInfo);
+//    localStorage.setItem("formInfo",formInfo);
+//    console.log(localStorage);
+// });
+//
+// //listen for something added to localStorage
+//
+// window.top.addEventListener('storage', onStorageEvent, false);
+// function onStorageEvent(storageEvent){
+//     console.log("we finally got a storage event fuck yeah!");
+// }
 
 //do this thing when localStorage changes
 
@@ -59,7 +65,7 @@ $(document).on('click', theGlow, function(){
 // keyboard bizNE$$$$$ess
 $(document).on('keydown', theGlow, function(e){
    switch (e.keyCode) {
-      case 82: rotate15(); break; //r for rotate
+      case 82: rotate(); break; //r for rotate
       case 67: cccopy(); break; //c for copy
       case 68: $(".glow").hide(); break; // d for delete
       default: return true;
@@ -74,35 +80,37 @@ $(document).on('keydown', theQuilt, function(e){
    }
 });
 
+
+
 // rotation funcs
+var rotate = function() {
+   var spinDuhPiece = $(".glow")[0].outerHTML;
+   switch (spinDuhPiece.charAt('18')) {
+      case "d": rotate60(); console.log("This is a diamond"); break;
+      case "w": rotate90(); console.log("This is a cathedral window"); break;
+      default: return true;
+   };
+};
+
 var degreesCount = 0;
-var rotate15 = function() {
+var rotate60 = function() {
    if (degreesCount >= 360) {
-      degreesCount = 15;
+      degreesCount = 60;
       return $(".glow").rotate(degreesCount);
    } else {
-      degreesCount += 15;
+      degreesCount += 60;
       return $(".glow").rotate(degreesCount);
    }
 };
-// var rotate60 = function() {
-//    if (degreesCount >= 360) {
-//       degreesCount = 60;
-//       return $(".glow").rotate(degreesCount);
-//    } else {
-//       degreesCount += 60;
-//       return $(".glow").rotate(degreesCount);
-//    }
-// };
-// var rotate90 = function() {
-//    if (degreesCount >= 360) {
-//       degreesCount = 90;
-//       return $(".glow").rotate(degreesCount);
-//    } else {
-//       degreesCount += 90;
-//       return $(".glow").rotate(degreesCount);
-//    }
-// };
+var rotate90 = function() {
+   if (degreesCount >= 360) {
+      degreesCount = 90;
+      return $(".glow").rotate(degreesCount);
+   } else {
+      degreesCount += 90;
+      return $(".glow").rotate(degreesCount);
+   }
+};
 
 // copy func
 var cccopy = function(){
@@ -110,12 +118,3 @@ var cccopy = function(){
    var copyDuhPiece = copyDuhPiece.replace(' ui-draggable ui-draggable-handle ui-draggable-dragging glow','');
    $("#quilt").append(copyDuhPiece);
 };
-
-// quilt pieces form pop out
-// click popout button
-// hide logo
-// link to new (tiny?) page
-
-$("#clickFerPopout").click(function(){
-   $("#logo").hide();
-});
