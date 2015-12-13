@@ -39,8 +39,6 @@ a {
 }
 
 .piece {
-   width: 55px;
-   height: 95px;
    position: absolute;
    top: 35px;
 }
@@ -48,6 +46,20 @@ a {
 .diamond {
    mask: url(images/colors/diamond-mask.png);
    -webkit-mask:url(images/colors/diamond-mask.png);
+   width: 55px;
+   height: 95px;
+}
+
+.window1 {
+   mask: url(images/colors/window-mask-1.png);
+   -webkit-mask:url(images/colors/window-mask-1.png);
+   width: 154px;
+}
+
+.window2 {
+   mask: url(images/colors/window-mask-2.png);
+   -webkit-mask:url(images/colors/window-mask-2.png);
+   width: 154px;
 }
 
 .glow{

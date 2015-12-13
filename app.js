@@ -8,9 +8,9 @@ $(document).ready(function(){
 var addPieces = function(){
    var colorChoice = $("input[name=color]:checked").val();
    var qty = $("#qty").val();
-   var layEmOut = 35;
    for (var i = 0; i < qty; i++) {
-      $("#quilt").append("<img class='piece diamond' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(layEmOut+(i*15))+"px;'>");
+      $("#quilt").append("<img class='piece window1' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(i*15)+"px;'>");
+      $("#quilt").append("<img class='piece window2' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ (i+1) +"; top: 165px; left: "+(i*15)+"px;'>");
    };
 };
 
@@ -19,20 +19,25 @@ $("#clickFerPieces").click(function(){
    addPieces();
 });
 
-// add pieces from popout to index
-$("#clickNSend").click(function(){
-   var colorChoice = $("input[name=color]:checked").val();
-   var qty = $("#qty").val();
-   var formInfo = {
-      "colors": colorChoice,
-      "quantity": qty
-   };
-   formInfo = JSON.stringify(formInfo);
-   console.log(formInfo);
-   localStorage.setItem("formInfo",formInfo);
-
-
-});
+// // add pieces from popout to index
+// $("#clickNSend").click(function(){
+//    var colorChoice = $("input[name=color]:checked").val();
+//    var qty = $("#qty").val();
+//    var formInfo = {
+//       "colors": colorChoice,
+//       "quantity": qty
+//    };
+//    formInfo = JSON.stringify(formInfo);
+//    console.log(formInfo);
+//    localStorage.setItem("formInfo",formInfo);
+// });
+//
+// //listen for something added to localStorage
+// $(function (){
+//   $(window).on('storage', function (e) {
+//     alert('storage changed');
+//   });
+// });
 
 // make shit draggable
 var theGlow = $(".glow");
