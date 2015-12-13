@@ -1,7 +1,7 @@
 // fancy as fuck fade in
 $(document).ready(function(){
    $("#logo").animate({"opacity":1.0},1500,function(){console.log()});
-   $("#quilt").animate({"opacity":1.0},2000,function(){console.log()});
+   // $("#quilt").animate({"opacity":1.0},2000,function(){console.log()});
 });
 
 // add quilt pieces
@@ -10,7 +10,7 @@ var addPieces = function(){
    var shapeChoice = $("input[name=shape]:checked").val();
    var qty = $("#qty").val();
    for (var i = 0; i < qty; i++) {
-      $("#quilt").append("<img class='piece "+ shapeChoice +"' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(i*15)+"px;'>");
+      $("#quilt").append("<img class='piece "+ shapeChoice +"' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(i*15+35)+"px;'>");
    };
 };
 

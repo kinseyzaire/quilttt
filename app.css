@@ -38,16 +38,13 @@ a {
    margin-top: 20px;
 }
 
-.piece {
-   position: absolute;
-   top: 35px;
-}
-
 .diamond {
    mask: url(images/colors/diamond-mask.png);
    -webkit-mask:url(images/colors/diamond-mask.png);
    shape-outside: url(images/colors/diamond-mask.png);
    -webkit-shape-outside:url(images/colors/diamond-mask.png);
+   position: absolute;
+   top: 35px;
    width: 55px;
    height: 95px;
 }
@@ -57,7 +54,9 @@ a {
    -webkit-mask:url(images/colors/window-mask-1.png);
    shape-outside: url(images/colors/window-mask-1.png);
    -webkit-shape-outside:url(images/colors/window-mask-1.png);
-   width: 154px;
+   position: absolute;
+   top: 10px;
+   width: 100px;
 }
 
 .window2 {
@@ -65,7 +64,9 @@ a {
    -webkit-mask:url(images/colors/window-mask-2.png);
    shape-outside: url(images/colors/window-mask-2.png);
    -webkit-shape-outside:url(images/colors/window-mask-2.png);
-   width: 154px;
+   position: absolute;
+   top: 35px;
+   width: 100px;
 }
 
 .glow{
@@ -80,9 +81,9 @@ a {
    opacity: 0.0;
 }
 
-#quilt {
+/*#quilt {
    opacity: 0.0;
-}
+}*/
 
 #qty {
    width: 45px;
@@ -90,4 +91,28 @@ a {
 
 #clickFerPopout {
    margin-top: 30px;
+}
+
+/*hidden radio buttons*/
+#diamondzzz {
+   position: absolute;
+   left: -10000px;
+}
+
+#windowww1 {
+   position: absolute;
+   left: -10000px;
+}
+
+#windowww2 {
+   position: absolute;
+   left: -10000px;
+}
+/*end hidden radio buttons*/
+
+/*trying to make an icon image be clicked in label to select radio button that is hidden*/
+/*oh god give us a sign!*/
+/*hahahaha*/
+input[name=shape]:checked + label {
+   opacity: 0.5;
 }
