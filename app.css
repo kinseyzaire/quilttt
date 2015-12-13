@@ -55,7 +55,7 @@ a {
    shape-outside: url(images/colors/window-mask-1.png);
    -webkit-shape-outside:url(images/colors/window-mask-1.png);
    position: absolute;
-   top: 10px;
+   top: -6px;
    width: 100px;
 }
 
@@ -65,7 +65,7 @@ a {
    shape-outside: url(images/colors/window-mask-2.png);
    -webkit-shape-outside:url(images/colors/window-mask-2.png);
    position: absolute;
-   top: 35px;
+   top: -5px;
    width: 100px;
 }
 
@@ -80,10 +80,6 @@ a {
    font-size: 2em;
    opacity: 0.0;
 }
-
-/*#quilt {
-   opacity: 0.0;
-}*/
 
 #qty {
    width: 45px;
@@ -108,11 +104,7 @@ a {
    position: absolute;
    left: -10000px;
 }
-/*end hidden radio buttons*/
 
-/*trying to make an icon image be clicked in label to select radio button that is hidden*/
-/*oh god give us a sign!*/
-/*hahahaha*/
 input[name=shape]:checked + label {
    opacity: 0.5;
 }
