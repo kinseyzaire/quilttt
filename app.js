@@ -9,7 +9,7 @@ var addPieces = function(){
    var shapeChoice = $("input[name=shape]:checked").val();
    var qty = $("#qty").val();
    for (var i = 0; i < qty; i++) {
-      $("#quilt").append("<img class='piece "+ shapeChoice +"' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*50) +".png' style='z-index: "+ i +"; left: "+(i*15+15)+"px;'>");
+      $("#quilt").append("<img class='piece "+ shapeChoice +"' src='images/colors/"+ colorChoice +"/"+ Math.floor(Math.random()*30) +".png' style='z-index: "+ i +"; left: "+(i*15+15)+"px;'>");
    };
 };
 
