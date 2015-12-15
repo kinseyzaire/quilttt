@@ -18,36 +18,18 @@ $("#clickFerPieces").click(function(){
    addPieces();
 });
 
-// DREADED POPOUT
-
+// POPOUT IS MY BITCH
 $("#clickFerPopout").click(function(){
+   popout = window.open('popout.html', 'ccclickFerPopout', "width=300, height=600, location=no, menubar=no, scrollbars=no, status=no, toolbar=no");
    $("#logo").hide();
 });
 
-// // add pieces from popout to localStorage
-// $("#clickNSend").click(function(){
-//    var colorChoice = $("input[name=color]:checked").val();
-//    var shapeChoice = $("input[name=shape]:checked").val();
-//    var qty = $("#qty").val();
-//    var formInfo = {
-//       "colors": colorChoice,
-//       "shape": shapeChoice,
-//       "quantity": qty
-//    };
-//    formInfo = JSON.stringify(formInfo);
-//    console.log(formInfo);
-//    localStorage.setItem("formInfo",formInfo);
-//    console.log(localStorage);
-// });
-//
-// //listen for something added to localStorage
-//
-// window.top.addEventListener('storage', onStorageEvent, false);
-// function onStorageEvent(storageEvent){
-//     console.log("we finally got a storage event fuck yeah!");
-// }
-
-//do this thing when localStorage changes
+var addPiecesFromPopout = function(formInfo){
+   var sttttuff = JSON.parse(formInfo);
+   for (var i = 0; i < sttttuff["quantity"]; i++) {
+      $("#quilt").append("<img class='piece "+ sttttuff["shape"] +"' src='images/colors/"+ sttttuff["colors"] +"/"+ Math.floor(Math.random()*30) +".png' style='z-index: "+ i +"; left: "+(i*15+15)+"px;'>");
+   };
+}
 
 // make shit draggable
 var theGlow = $(".glow");
@@ -79,8 +61,6 @@ $(document).on('keydown', theQuilt, function(e){
       theQuilt.html("<div></div>");
    }
 });
-
-
 
 // rotation funcs
 var rotate = function() {
