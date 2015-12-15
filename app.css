@@ -39,10 +39,10 @@ a {
 }
 
 .diamond {
-   mask: url(images/colors/diamond-mask.png);
-   -webkit-mask:url(images/colors/diamond-mask.png);
-   shape-outside: url(images/colors/diamond-mask.png);
-   -webkit-shape-outside:url(images/colors/diamond-mask.png);
+   mask: url(images/colors/masks/diamond-mask.png);
+   -webkit-mask:url(images/colors/masks/diamond-mask.png);
+   shape-outside: url(images/colors/masks/diamond-mask.png);
+   -webkit-shape-outside:url(images/colors/masks/diamond-mask.png);
    position: absolute;
    top: 35px;
    width: 55px;
@@ -50,20 +50,40 @@ a {
 }
 
 .window1 {
-   mask: url(images/colors/window-mask-1.png);
-   -webkit-mask:url(images/colors/window-mask-1.png);
-   shape-outside: url(images/colors/window-mask-1.png);
-   -webkit-shape-outside:url(images/colors/window-mask-1.png);
+   mask: url(images/colors/masks/window-mask-1.png);
+   -webkit-mask:url(images/colors/masks/window-mask-1.png);
+   shape-outside: url(images/colors/masks/window-mask-1.png);
+   -webkit-shape-outside:url(images/colors/masks/window-mask-1.png);
    position: absolute;
    top: -6px;
    width: 100px;
 }
 
 .window2 {
-   mask: url(images/colors/window-mask-2.png);
-   -webkit-mask:url(images/colors/window-mask-2.png);
-   shape-outside: url(images/colors/window-mask-2.png);
-   -webkit-shape-outside:url(images/colors/window-mask-2.png);
+   mask: url(images/colors/masks/window-mask-2.png);
+   -webkit-mask:url(images/colors/masks/window-mask-2.png);
+   shape-outside: url(images/colors/masks/window-mask-2.png);
+   -webkit-shape-outside:url(images/colors/masks/window-mask-2.png);
+   position: absolute;
+   top: -5px;
+   width: 100px;
+}
+
+.traditional1 {
+   mask: url(images/colors/masks/traditional-mask-1.png);
+   -webkit-mask:url(images/colors/masks/traditional-mask-1.png);
+   shape-outside: url(images/colors/masks/traditional-mask-1.png);
+   -webkit-shape-outside:url(images/colors/masks/traditional-mask-1.png);
+   position: absolute;
+   top: -6px;
+   width: 100px;
+}
+
+.traditional2 {
+   mask: url(images/colors/masks/traditional-mask-2.png);
+   -webkit-mask:url(images/colors/masks/traditional-mask-2.png);
+   shape-outside: url(images/colors/masks/traditional-mask-2.png);
+   -webkit-shape-outside:url(images/colors/masks/traditional-mask-2.png);
    position: absolute;
    top: -5px;
    width: 100px;
@@ -90,17 +110,7 @@ a {
 }
 
 /*hidden radio buttons*/
-#diamondzzz {
-   position: absolute;
-   left: -10000px;
-}
-
-#windowww1 {
-   position: absolute;
-   left: -10000px;
-}
-
-#windowww2 {
+#diamondzzz, #windowww1, #windowww2, #traditional1, #traditional2 {
    position: absolute;
    left: -10000px;
 }

@@ -20,7 +20,7 @@ $("#clickFerPieces").click(function(){
 
 // POPOUT IS MY BITCH
 $("#clickFerPopout").click(function(){
-   popout = window.open('popout.html', 'ccclickFerPopout', "width=300, height=600, location=no, menubar=no, scrollbars=no, status=no, toolbar=no");
+   popout = window.open('popout.html', 'ccclickFerPopout', "width=300, height=700, location=no, menubar=no, scrollbars=no, status=no, toolbar=no");
    $("#logo").hide();
 });
 
@@ -66,13 +66,23 @@ $(document).on('keydown', theQuilt, function(e){
 var rotate = function() {
    var spinDuhPiece = $(".glow")[0].outerHTML;
    switch (spinDuhPiece.charAt('18')) {
-      case "d": rotate60(); console.log("This is a diamond"); break;
-      case "w": rotate90(); console.log("This is a cathedral window"); break;
+      case "d": rotate60(); break; // diamonds
+      case "w": rotate90(); break; // cathedral windows
+      case "t": rotate45(); break; // traditionals
       default: return true;
    };
 };
 
 var degreesCount = 0;
+var rotate45 = function() {
+   if (degreesCount >= 360) {
+      degreesCount = 45;
+      return $(".glow").rotate(degreesCount);
+   } else {
+      degreesCount += 45;
+      return $(".glow").rotate(degreesCount);
+   }
+};
 var rotate60 = function() {
    if (degreesCount >= 360) {
       degreesCount = 60;
@@ -98,3 +108,19 @@ var cccopy = function(){
    var copyDuhPiece = copyDuhPiece.replace(' ui-draggable ui-draggable-handle ui-draggable-dragging glow','');
    $("#quilt").append(copyDuhPiece);
 };
+
+// save quilts option
+$("#saveMyBeautifulCreation").click(function(){
+   var myBeautifulCreation = $("main")[0].innerHTML;
+   var savedQuilt = {
+      "quilt-pieces": myBeautifulCreation
+   };
+   savedQuilt = JSON.stringify(savedQuilt);
+   localStorage.setItem("savedqqquilt", savedQuilt);
+});
+
+$('#loadSavedQuilts').click(function(){
+   var sssavedDesigns = localStorage.getItem("savedqqquilt")
+   sssavedDesigns = JSON.parse(sssavedDesigns);
+   $("#quilt").append(sssavedDesigns["quilt-pieces"]);
+});
