@@ -18,17 +18,17 @@ $("#clickNSend").click(function(){
 });
 
 // save quilts option
-$("#saveMyBeautifulCreation").click(function(){
-   var myBeautifulCreation = $("main")[0].innerHTML;
-   var savedQuilt = {
-      "quilt-pieces": myBeautifulCreation
-   };
-   savedQuilt = JSON.stringify(savedQuilt);
-   localStorage.setItem("savedqqquilt", savedQuilt);
-});
-
-$('#loadSavedQuilts').click(function(){
-   var sssavedDesigns = localStorage.getItem("savedqqquilt")
-   sssavedDesigns = JSON.parse(sssavedDesigns);
-   $("#quilt").append(sssavedDesigns["quilt-pieces"]);
-});
+// $("#saveMyBeautifulCreation").click(function(){
+//    var myBeautifulCreation = $("main")[0].innerHTML;
+//    var savedQuilt = {
+//       "quilt-pieces": myBeautifulCreation
+//    };
+//    savedQuilt = JSON.stringify(savedQuilt);
+//    localStorage.setItem("savedqqquilt", savedQuilt);
+// });
+//
+// $('#loadSavedQuilts').click(function(){
+//    var sssavedDesigns = localStorage.getItem("savedqqquilt")
+//    sssavedDesigns = JSON.parse(sssavedDesigns);
+//    $("#quilt").append(sssavedDesigns["quilt-pieces"]);
+// });
