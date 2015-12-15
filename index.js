@@ -110,14 +110,16 @@ var cccopy = function(){
 };
 
 // save quilts option
-$("#saveMyBeautifulCreation").click(function(){
+var saveTheQuilt = function(){
    var myBeautifulCreation = $("main")[0].innerHTML;
    var savedQuilt = {
       "quilt-pieces": myBeautifulCreation
    };
    savedQuilt = JSON.stringify(savedQuilt);
    localStorage.setItem("savedqqquilt", savedQuilt);
-});
+};
+
+$("#saveMyBeautifulCreation").click(saveTheQuilt());
 
 $('#loadSavedQuilts').click(function(){
    var sssavedDesigns = localStorage.getItem("savedqqquilt")
